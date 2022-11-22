@@ -1,6 +1,11 @@
 package com.jap.music.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Track {
+    @Id
     private int id;
     private String name;
     private String comments;
