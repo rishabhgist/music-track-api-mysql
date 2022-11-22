@@ -43,4 +43,8 @@ public class TrackController {
        trackService.delete(id);
        return "Deleted Track" + id;
     }
+    @PutMapping("/track/{id}")
+    public ResponseEntity<?> update(@RequestBody Track track, @PathVariable int id){
+        return new ResponseEntity<>(trackService.update(id, track), HttpStatus.OK);
+    }
 }
