@@ -27,8 +27,13 @@ public class TrackController {
     public ResponseEntity<?> save(@RequestBody Track track){
         return new ResponseEntity<>(trackService.save(track), HttpStatus.CREATED);
     }
-    @GetMapping("/track/{artist}")
+    @GetMapping("/track/artist={artist}")
     public ResponseEntity<?> getByArtist(@PathVariable String artist){
         return new ResponseEntity<>(trackService.getTrackByArtist(artist), HttpStatus.OK);
+    }
+
+    @GetMapping("/track/name={name}")
+    public ResponseEntity<?> getByName(@PathVariable String name){
+        return new ResponseEntity<>(trackService.getTrackByName(name), HttpStatus.OK);
     }
 }
