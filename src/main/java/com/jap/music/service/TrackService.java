@@ -61,6 +61,7 @@ public class TrackService implements ITrackService {
 
     @Override
     public void delete(int id) {
+        Optional<Track> optTrack = trackRepository.findById(id);
         trackRepository.deleteById(id);
     }
 

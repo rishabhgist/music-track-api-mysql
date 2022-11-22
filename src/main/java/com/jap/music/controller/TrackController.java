@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
+
 @RestController
 @RequestMapping("api/v1")
 public class TrackController {
@@ -35,5 +37,10 @@ public class TrackController {
     @GetMapping("/track/name={name}")
     public ResponseEntity<?> getByName(@PathVariable String name){
         return new ResponseEntity<>(trackService.getTrackByName(name), HttpStatus.OK);
+    }
+    @DeleteMapping("/track/{id}")
+    public String delete(@PathVariable int id){
+       trackService.delete(id);
+       return "Deleted Track" + id;
     }
 }
