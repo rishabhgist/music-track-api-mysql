@@ -6,60 +6,60 @@ import javax.persistence.Id;
 @Entity
 public class Track {
     @Id
-    private int id;
-    private String name;
-    private String comments;
-    private double rating;
-    private String artist;
+    private int trackId;
+    private String trackName;
+    private String trackComment;
+    private double trackRating;
+    private String trackArtist;
 
     public Track() {
     }
 
-    public Track(int id, String name, String comments, double rating, String artist) {
-        this.id = id;
-        this.name = name;
-        this.comments = comments;
-        this.rating = rating;
-        this.artist = artist;
+    public Track(int trackId, String trackName, String trackComment, double trackRating, String trackArtist) {
+        this.trackId = trackId;
+        this.trackName = trackName;
+        this.trackComment = trackComment;
+        this.trackRating = trackRating;
+        this.trackArtist = trackArtist;
     }
 
-    public int getId() {
-        return id;
+    public int getTrackId() {
+        return trackId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTrackId(int trackId) {
+        this.trackId = trackId;
     }
 
-    public String getName() {
-        return name;
+    public String getTrackName() {
+        return trackName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTrackName(String trackName) {
+        this.trackName = trackName;
     }
 
-    public String getComments() {
-        return comments;
+    public String getTrackComment() {
+        return trackComment;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
+    public void setTrackComment(String trackComment) {
+        this.trackComment = trackComment;
     }
 
-    public double getRating() {
-        return rating;
+    public double getTrackRating() {
+        return trackRating;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setTrackRating(double trackRating) {
+        this.trackRating = trackRating;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getTrackArtist() {
+        return trackArtist;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setTrackArtist(String trackArtist) {
+        this.trackArtist = trackArtist;
     }
 }

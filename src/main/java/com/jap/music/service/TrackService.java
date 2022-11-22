@@ -34,7 +34,7 @@ public class TrackService implements ITrackService {
 
     @Override
     public List<Track> getTrackByArtist(String artist) {
-        return trackRepository.findByArtistName(artist);
+        return trackRepository.findByTrackArtist(artist);
     }
 
     @Override
@@ -44,17 +44,17 @@ public class TrackService implements ITrackService {
             return null;
         }
         Track existingTrack = optTrack.get();
-        if (track.getName() != null) {
-            existingTrack.setName(track.getName());
+        if (track.getTrackName() != null) {
+            existingTrack.setTrackName(track.getTrackName());
         }
-        if (track.getComments() != null) {
-            existingTrack.setComments(track.getComments());
+        if (track.getTrackComment() != null) {
+            existingTrack.setTrackComment(track.getTrackComment());
         }
-        if (track.getRating() != 0.0) {
-            existingTrack.setRating(track.getRating());
+        if (track.getTrackRating() != 0.0) {
+            existingTrack.setTrackRating(track.getTrackRating());
         }
-        if (track.getArtist() != null) {
-            existingTrack.setArtist(track.getArtist());
+        if (track.getTrackArtist() != null) {
+            existingTrack.setTrackArtist(track.getTrackArtist());
         }
         return trackRepository.save(existingTrack);
     }
